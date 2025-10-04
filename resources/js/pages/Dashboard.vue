@@ -136,13 +136,24 @@ const recipes = [
             </div>
 
             <!-- Welcome Section -->
-            <div class="mb-8">
-                <h1 class="mb-2 text-3xl font-bold text-gray-900">
-                    Selamat Datang di Resepin! 👋
-                </h1>
-                <p class="text-lg text-gray-600">
-                    Temukan resep-resep terbaik dari chef berpengalaman
-                </p>
+            <div class="mb-8 flex items-center justify-between">
+                <div>
+                    <h1 class="mb-2 text-3xl font-bold text-gray-900">
+                        Selamat Datang di Resepin! 👋
+                    </h1>
+                    <p class="text-lg text-gray-600">
+                        Temukan resep-resep terbaik dari chef berpengalaman
+                    </p>
+                </div>
+                <a
+                    href="/add-recipe"
+                    class="flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-600 transition-colors shadow-md"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    Tambah Resep
+                </a>
             </div>
 
             <!-- Recipes Grid -->
