@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: resepin_app:latest
+    container_name: resepin_app
+    restart: unless-stopped
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=1
+      - APP_KEY=base64:REPLACE_ME
+      - DB_HOST=db
+      - DB_DATABASE=resepin
+      - DB_USERNAME=resepin
+      - DB_PASSWORD=secret
+    volumes:
+      - ./:/var/www/html:cached
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: resepin_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: resepin
+      MYSQL_USER: resepin
+      MYSQL_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  dbdata:
