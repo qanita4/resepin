@@ -23,9 +23,11 @@
                 type="text"
                 placeholder="Cari resep favorit kamu..."
                 class="block w-full rounded-xl border border-gray-300 py-3 pr-4 pl-10 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-transparent focus:ring-2"
-                :style="{ 'focus:ring-color': 'var(--resepin-tomato)' }"
+                :style="{ '--tw-ring-color': 'var(--resepin-tomato)' }"
                 @input="handleSearch"
                 @keyup.enter="handleEnter"
+                @focus="onFocus"
+                @blur="hideSuggestions"
             />
             <div
                 v-if="searchQuery"
@@ -157,10 +159,12 @@ const hideSuggestions = () => {
         showSuggestions.value = false;
     }, 200);
 };
+
+const onFocus = () => {
+    showSuggestions.value = searchQuery.value.length >= 2;
+};
 </script>
 
 <style scoped>
-input:focus {
-    ring-color: var(--resepin-tomato);
-}
+/* rely on Tailwind's focus:ring utilities and custom CSS variable --resepin-tomato */
 </style>

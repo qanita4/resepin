@@ -1,12 +1,18 @@
 <template>
     <div
-        class="overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+        class="overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-lg cursor-pointer"
+        role="button"
+        tabindex="0"
+        @click="$emit('view-recipe', recipe)"
+        @keydown.enter="$emit('view-recipe', recipe)"
+        :aria-label="`Lihat resep ${recipe.title}`"
     >
         <!-- Recipe Image -->
         <div class="relative aspect-[4/3] overflow-hidden">
             <img
                 :src="recipe.image"
                 :alt="recipe.title"
+                loading="lazy"
                 class="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
             />
         </div>
@@ -20,8 +26,9 @@
             <div class="mb-4 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <img
-                        :src="recipe.author.avatar"
+                        :src="recipe.author.avatar || 'https://via.placeholder.com/40?text=U'"
                         :alt="recipe.author.name"
+                        loading="lazy"
                         class="h-6 w-6 rounded-full object-cover"
                     />
                     <span class="text-sm text-gray-600">{{
@@ -42,9 +49,10 @@
 
             <!-- Action Button -->
             <button
-                class="w-full rounded-lg px-4 py-2 font-medium text-white transition-all duration-200 hover:scale-105 hover:transform hover:opacity-90"
+                class="w-full rounded-lg px-4 py-2 font-medium text-white transition-all duration-200 hover:scale-105 hover:transform hover:opacity-90 bg-resepin-tomato"
                 style="background-color: var(--resepin-tomato)"
-                @click="$emit('view-recipe', recipe)"
+                @click.stop="$emit('view-recipe', recipe)"
+                aria-label="Lihat resep {{ recipe.title }}"
             >
                 Lihat
             </button>
@@ -79,6 +87,7 @@ defineEmits<{
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

@@ -17,5 +17,6 @@ docker compose down
 ```
 
 Notes:
+
 - Replace APP_KEY in docker-compose.yml or set it at runtime (php artisan key:generate).
 - If you need node dev server, run `npm run dev` locally or adjust container to run Vite.
