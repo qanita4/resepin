@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--resepin-tomato: 255 77 77;
+		--resepin-cream: 255 243 230;
+		--resepin-green: 76 175 80;
+	}
+
+	body {
+		background-color: rgb(var(--resepin-cream));
+		color: #1f2937;
+	}
+}
+
+@layer utilities {
+	.bg-resepin-tomato {
+		background-color: rgb(var(--resepin-tomato));
+	}
+
+	.bg-resepin-cream {
+		background-color: rgb(var(--resepin-cream));
+	}
+
+	.bg-resepin-green {
+		background-color: rgb(var(--resepin-green));
+	}
+
+	.text-resepin-tomato {
+		color: rgb(var(--resepin-tomato));
+	}
+
+	.text-resepin-green {
+		color: rgb(var(--resepin-green));
+	}
+
+	.text-resepin-cream {
+		color: rgb(var(--resepin-cream));
+	}
+
+	.border-resepin-tomato {
+		border-color: rgb(var(--resepin-tomato));
+	}
+
+	.border-resepin-green {
+		border-color: rgb(var(--resepin-green));
+	}
+}

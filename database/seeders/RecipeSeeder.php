@@ -1,0 +1,203 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Recipe;
+use Illuminate\Database\Seeder;
+
+class RecipeSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $recipes = [
+            [
+                'slug' => 'nasi-goreng-seafood-spesial',
+                'title' => 'Nasi Goreng Seafood Spesial',
+                'chef' => 'Chef Budi',
+                'initial_rating' => 4.8,
+                'description' => 'Nasi goreng dengan udang dan cumi, disajikan dengan jeruk nipis.',
+                'image' => 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Favorit Chef',
+                'duration' => '30 menit',
+                'servings' => '2 porsi',
+                'difficulty' => 'Sedang',
+                'ingredients' => [
+                    '2 piring nasi putih dingin',
+                    '150g udang kupas',
+                    '100g cumi iris',
+                    '2 siung bawang putih cincang',
+                    '2 sdm saus tiram',
+                    '1 sdm kecap manis',
+                    '1 butir telur',
+                    'Cabe rawit sesuai selera',
+                ],
+                'steps' => [
+                    'Panaskan minyak, tumis bawang putih hingga harum.',
+                    'Masukkan udang dan cumi, masak hingga berubah warna.',
+                    'Dorong bahan ke pinggir wajan, orak-arik telur di sisi kosong.',
+                    'Masukkan nasi bersama saus tiram dan kecap, aduk hingga rata.',
+                    'Tambahkan cabai, bumbui dengan garam dan lada, masak hingga nasi panas merata.',
+                    'Sajikan dengan taburan bawang goreng dan jeruk nipis.',
+                ],
+            ],
+            [
+                'slug' => 'gado-gado-jakarta-asli',
+                'title' => 'Gado-Gado Jakarta Asli',
+                'chef' => 'Chef Andi',
+                'initial_rating' => 4.7,
+                'description' => 'Sayuran segar dengan bumbu kacang creamy dan kerupuk renyah.',
+                'image' => 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9bf?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Menu Sehat',
+                'duration' => '25 menit',
+                'servings' => '3 porsi',
+                'difficulty' => 'Mudah',
+                'ingredients' => [
+                    '200g kangkung',
+                    '150g tauge',
+                    '2 buah kentang rebus',
+                    '1 butir telur rebus',
+                    '100g tempe goreng',
+                    '100g tahu goreng',
+                    '150g bumbu kacang siap pakai',
+                    'Kerupuk untuk pelengkap',
+                ],
+                'steps' => [
+                    'Rebus kangkung dan tauge hingga matang, tiriskan.',
+                    'Potong kentang, tahu, dan tempe sesuai selera.',
+                    'Susun sayuran dan pelengkap di piring saji.',
+                    'Panaskan bumbu kacang dengan sedikit air hingga tekstur kental.',
+                    'Tuangkan bumbu kacang di atas sayuran.',
+                    'Sajikan dengan potongan telur rebus dan kerupuk.',
+                ],
+            ],
+            [
+                'slug' => 'soto-ayam-lamongan',
+                'title' => 'Soto Ayam Lamongan',
+                'chef' => 'Bu Ratna',
+                'initial_rating' => 4.6,
+                'description' => 'Kuah kuning gurih dengan suwiran ayam dan koya khas Lamongan.',
+                'image' => 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Tradisional',
+                'duration' => '45 menit',
+                'servings' => '4 porsi',
+                'difficulty' => 'Sedang',
+                'ingredients' => [
+                    '500g ayam kampung',
+                    '2 liter air',
+                    '3 lembar daun jeruk',
+                    '2 batang serai digeprek',
+                    '5 siung bawang putih',
+                    '6 siung bawang merah',
+                    '2 cm kunyit bakar',
+                    '1 sdt ketumbar sangrai',
+                    'Bihun, telur rebus, dan koya untuk penyajian',
+                ],
+                'steps' => [
+                    'Rebus ayam hingga empuk, suwir dagingnya dan sisihkan kaldu.',
+                    'Haluskan bumbu, lalu tumis hingga harum bersama serai dan daun jeruk.',
+                    'Masukkan bumbu tumis ke dalam kaldu, masak hingga mendidih.',
+                    'Bumbui dengan garam, gula, dan lada.',
+                    'Susun bihun, ayam suwir, dan telur di mangkuk.',
+                    'Tuang kuah panas dan taburi koya sebelum disajikan.',
+                ],
+            ],
+            [
+                'slug' => 'bakso-malang-original',
+                'title' => 'Bakso Malang Original',
+                'chef' => 'Pak Joko',
+                'initial_rating' => 4.5,
+                'description' => 'Bakso, siomay, dan tahu goreng dengan kuah kaldu sapi hangat.',
+                'image' => 'https://images.unsplash.com/photo-1534938665420-4193effeaccf?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Paling Laris',
+                'duration' => '60 menit',
+                'servings' => '5 porsi',
+                'difficulty' => 'Sulit',
+                'ingredients' => [
+                    '500g daging sapi giling',
+                    '100g tepung tapioka',
+                    '3 siung bawang putih goreng',
+                    '1 putih telur',
+                    'Garam, lada, dan kaldu bubuk',
+                    'Bahan pelengkap: siomay, tahu goreng, mie, dan sayur sawi',
+                    '2 liter kaldu sapi',
+                ],
+                'steps' => [
+                    'Campur daging giling dengan bumbu halus dan tepung hingga kalis.',
+                    'Bentuk adonan menjadi bola bakso, rebus dalam air panas hingga matang.',
+                    'Panaskan kaldu sapi dan bumbui sesuai selera.',
+                    'Siapkan pelengkap seperti siomay, tahu goreng, mie, dan sayuran.',
+                    'Tata bakso dan pelengkap dalam mangkuk.',
+                    'Siram dengan kuah kaldu panas dan sajikan selagi hangat.',
+                ],
+            ],
+            [
+                'slug' => 'gudeg-yogya-manis',
+                'title' => 'Gudeg Yogya Manis',
+                'chef' => 'Bu Tuti',
+                'initial_rating' => 4.7,
+                'description' => 'Nangka muda dimasak lama dengan santan, disajikan dengan krecek.',
+                'image' => 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Signature',
+                'duration' => '120 menit',
+                'servings' => '6 porsi',
+                'difficulty' => 'Sulit',
+                'ingredients' => [
+                    '1 kg nangka muda, potong-potong',
+                    '500 ml santan kental',
+                    '5 butir telur rebus',
+                    '2 lembar daun salam',
+                    '3 lembar daun jeruk',
+                    '100g gula merah',
+                    'Bumbu halus: bawang merah, bawang putih, kemiri, ketumbar, lengkuas',
+                    'Krecek dan sambal goreng untuk pelengkap',
+                ],
+                'steps' => [
+                    'Rebus nangka muda hingga setengah empuk, tiriskan.',
+                    'Tumis bumbu halus dengan daun salam dan daun jeruk hingga harum.',
+                    'Masukkan nangka dan aduk hingga tercampur rata dengan bumbu.',
+                    'Tuang santan dan gula merah, masak dengan api kecil hingga meresap.',
+                    'Tambahkan telur rebus, masak kembali sampai kuah menyusut dan kental.',
+                    'Sajikan dengan krecek dan sambal goreng.',
+                ],
+            ],
+            [
+                'slug' => 'coto-makassar-klasik',
+                'title' => 'Coto Makassar Klasik',
+                'chef' => 'Chef Arman',
+                'initial_rating' => 4.9,
+                'description' => 'Kuah rempah kental dengan jeroan sapi, disajikan dengan buras.',
+                'image' => 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80',
+                'badge' => 'Pilihan Editor',
+                'duration' => '90 menit',
+                'servings' => '4 porsi',
+                'difficulty' => 'Sedang',
+                'ingredients' => [
+                    '500g daging sapi campur jeroan',
+                    '2 liter air',
+                    '5 siung bawang putih',
+                    '5 siung bawang merah',
+                    '2 batang serai',
+                    '1 ruas lengkuas',
+                    '3 sdm kacang tanah goreng halus',
+                    'Rempah: ketumbar, jintan, dan merica',
+                    'Buras dan sambal tauco untuk penyajian',
+                ],
+                'steps' => [
+                    'Rebus daging dan jeroan hingga empuk, potong-potong.',
+                    'Haluskan bumbu dan tumis bersama serai dan lengkuas.',
+                    'Masukkan bumbu tumis ke dalam kuah rebusan daging.',
+                    'Tambahkan kacang tanah halus dan rempah, aduk rata.',
+                    'Masak dengan api kecil hingga kuah mengental dan bumbu meresap.',
+                    'Sajikan panas dengan taburan bawang goreng dan buras.',
+                ],
+            ],
+        ];
+
+        foreach ($recipes as $recipe) {
+            Recipe::updateOrCreate(
+                ['slug' => $recipe['slug']],
+                $recipe
+            );
+        }
+    }
+}
