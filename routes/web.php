@@ -5,16 +5,20 @@ use App\Http\Controllers\RecipeCommentController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RecipeLikeController;
 use Illuminate\Support\Facades\Route;
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
 
-Route::get('/dashboard', [RecipeController::class, 'index'])
-    ->middleware(['auth', 'verified'])
+Route::get('/', [RecipeController::class, 'index'])
+    // ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+    Route::get('/dashboard', [RecipeController::class, 'index'])
+    // ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::get('/recipes/{recipe:slug}', [RecipeController::class, 'show'])
-    ->middleware(['auth', 'verified'])
+    // ->middleware(['auth', 'verified'])
     ->name('recipes.show');
 
 Route::post('/recipes/{recipe:slug}/likes', [RecipeLikeController::class, 'store'])

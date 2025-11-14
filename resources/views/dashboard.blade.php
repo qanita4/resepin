@@ -17,7 +17,7 @@
                     Selamat Datang di Resepin! 👋
                 </h1>
                 <p class="text-lg text-gray-600">
-                    Temukan resep-resep terbaik dari chef berpengalaman
+                    Temukan resep-resep terbaik dari pengguna lainnya!!!
                 </p>
             </div>
             <a
